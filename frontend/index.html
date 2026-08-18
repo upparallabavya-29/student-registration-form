@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EduEnroll — Premium student registration portal. Enroll in your dream course in minutes." />
+  <title>EduEnroll | Student Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#page-main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="site-logo" href="#" aria-label="EduEnroll — go to homepage">
+        <span class="logo-icon" aria-hidden="true">🎓</span>
+        <span class="logo-name">EduEnroll</span>
+      </a>
+      <p class="site-tagline">Your future starts here.</p>
+      <div class="header-badge" aria-live="polite" aria-label="Current registration step">
+        Step <span id="header-step">1</span>&nbsp;of&nbsp;3
+      </div>
+    </div>
+  </header>
+
+  <main id="page-main">
+
+    <div class="reg-layout" id="reg-layout">
+
+      <article class="form-card" aria-label="Student registration form">
+
+        <div class="progress-bar" role="navigation" aria-label="Registration steps">
+          <div class="pb-step pb-active" id="pb-1" data-step="1" aria-current="step">
+            <div class="pb-circle">
+              <span class="pb-num" aria-hidden="true">1</span>
+              <span class="pb-check" aria-hidden="true">✓</span>
+            </div>
+            <span class="pb-label">Personal</span>
+          </div>
+          <div class="pb-connector" id="conn-12" role="separator" aria-hidden="true"></div>
+          <div class="pb-step" id="pb-2" data-step="2">
+            <div class="pb-circle">
+              <span class="pb-num" aria-hidden="true">2</span>
+              <span class="pb-check" aria-hidden="true">✓</span>
+            </div>
+            <span class="pb-label">Course</span>
+          </div>
+          <div class="pb-connector" id="conn-23" role="separator" aria-hidden="true"></div>
+          <div class="pb-step" id="pb-3" data-step="3">
+            <div class="pb-circle">
+              <span class="pb-num" aria-hidden="true">3</span>
+              <span class="pb-check" aria-hidden="true">✓</span>
+            </div>
+            <span class="pb-label">Confirm</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Personal Information -->
+        <section class="step-panel step-active" id="step-1" aria-labelledby="s1-title">
+          <div class="step-intro">
+            <div class="step-intro-icon" aria-hidden="true">👤</div>
+            <div>
+              <h2 id="s1-title" class="step-title">Personal Information</h2>
+              <p class="step-desc">Tell us about yourself to get started.</p>
+            </div>
+          </div>
+
+          <div class="fields-grid">
+
+            <div class="fg" id="fg-fullName">
+              <label class="fl" for="fullName">Full Name <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-box">
+                <input class="fi" type="text" id="fullName" name="fullName"
+                  placeholder="e.g. Jane Doe" autocomplete="name"
+                  aria-required="true" aria-describedby="e-fullName" />
+                <span class="vi" aria-hidden="true"></span>
+              </div>
+              <span class="fe" id="e-fullName" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="fg" id="fg-email">
+              <label class="fl" for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-box">
+                <input class="fi" type="email" id="email" name="email"
+                  placeholder="e.g. jane@example.com" autocomplete="email"
+                  aria-required="true" aria-describedby="e-email" />
+                <span class="vi" aria-hidden="true"></span>
+              </div>
+              <span class="fe" id="e-email" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="fg" id="fg-phone">
+              <label class="fl" for="phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-box">
+                <input class="fi" type="tel" id="phone" name="phone"
+                  placeholder="e.g. +1 555 000 0000" autocomplete="tel"
+                  aria-required="true" aria-describedby="e-phone" />
+                <span class="vi" aria-hidden="true"></span>
+              </div>
+              <span class="fe" id="e-phone" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="fg" id="fg-dob">
+              <label class="fl" for="dob">Date of Birth <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-box">
+                <input class="fi fi-date" type="date" id="dob" name="dob"
+                  aria-required="true" aria-describedby="dob-age-wrap e-dob" />
+                <span class="vi" aria-hidden="true"></span>
+              </div>
+              <div class="age-badge-wrap" id="dob-age-wrap" hidden aria-live="polite">
+                <span class="age-badge">🎂 Age: <strong id="age-val">—</strong></span>
+              </div>
+              <span class="fe" id="e-dob" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="fg fg-full" id="fg-gender">
+              <span class="fl" id="gender-label">Gender <span class="req" aria-hidden="true">*</span></span>
+              <div class="gender-grid" role="group" aria-labelledby="gender-label" aria-describedby="e-gender">
+                <label class="gender-chip">
+                  <input type="radio" name="gender" value="male" />
+                  <span class="gc-inner"><span aria-hidden="true">♂</span> Male</span>
+                </label>
+                <label class="gender-chip">
+                  <input type="radio" name="gender" value="female" />
+                  <span class="gc-inner"><span aria-hidden="true">♀</span> Female</span>
+                </label>
+                <label class="gender-chip">
+                  <input type="radio" name="gender" value="non-binary" />
+                  <span class="gc-inner"><span aria-hidden="true">⚧</span> Non-binary</span>
+                </label>
+                <label class="gender-chip">
+                  <input type="radio" name="gender" value="prefer-not-to-say" />
+                  <span class="gc-inner"><span aria-hidden="true">🔒</span> Prefer not to say</span>
+                </label>
+              </div>
+              <span class="fe" id="e-gender" role="alert" aria-live="polite"></span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Step 2: Course & Address -->
+        <section class="step-panel" id="step-2" aria-labelledby="s2-title">
+          <div class="step-intro">
+            <div class="step-intro-icon" aria-hidden="true">📚</div>
+            <div>
+              <h2 id="s2-title" class="step-title">Course Selection</h2>
+              <p class="step-desc">Choose the programme that fits your ambitions.</p>
+            </div>
+          </div>
+
+          <div class="fg" id="fg-course">
+            <span class="fl" id="course-label">Select a Course <span class="req" aria-hidden="true">*</span></span>
+            <div class="course-grid" id="course-grid"
+              role="radiogroup" aria-labelledby="course-label" aria-describedby="e-course">
+              <!-- Course cards injected by script.js -->
+            </div>
+            <span class="fe" id="e-course" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Course info panel — shown when a course is selected -->
+          <div class="cip" id="cip" hidden aria-live="polite" aria-label="Selected course details">
+            <div class="cip-grid">
+              <div class="cip-stat">
+                <div class="cip-icon" aria-hidden="true">🎓</div>
+                <div class="cip-val" id="cip-level">—</div>
+                <div class="cip-key">Level</div>
+              </div>
+              <div class="cip-stat">
+                <div class="cip-icon" aria-hidden="true">⏱</div>
+                <div class="cip-val" id="cip-dur">—</div>
+                <div class="cip-key">Duration</div>
+              </div>
+              <div class="cip-stat">
+                <div class="cip-icon" aria-hidden="true">📚</div>
+                <div class="cip-val" id="cip-mod">—</div>
+                <div class="cip-key">Modules</div>
+              </div>
+              <div class="cip-stat">
+                <div class="cip-icon" aria-hidden="true">👥</div>
+                <div class="cip-val" id="cip-seats">—</div>
+                <div class="cip-key">Seats Available</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fg fg-full" id="fg-address">
+            <label class="fl" for="address">Residential Address <span class="req" aria-hidden="true">*</span></label>
+            <div class="input-box">
+              <textarea class="fi fi-textarea" id="address" name="address" rows="4"
+                placeholder="Street, City, State / Province, Postcode, Country"
+                autocomplete="street-address"
+                aria-required="true" aria-describedby="e-address"></textarea>
+              <span class="vi vi-ta" aria-hidden="true"></span>
+            </div>
+            <span class="fe" id="e-address" role="alert" aria-live="polite"></span>
+          </div>
+        </section>
+
+        <!-- Step 3: Review & Confirm -->
+        <section class="step-panel" id="step-3" aria-labelledby="s3-title">
+          <div class="step-intro">
+            <div class="step-intro-icon" aria-hidden="true">✅</div>
+            <div>
+              <h2 id="s3-title" class="step-title">Review &amp; Confirm</h2>
+              <p class="step-desc">Please review your details before submitting.</p>
+            </div>
+          </div>
+          <div class="form-error-banner" id="form-error-banner" hidden role="alert" aria-live="assertive">
+            <span class="feb-icon" aria-hidden="true">⚠️</span>
+            <span class="feb-text" id="form-error-text">Unable to complete registration. Please try again.</span>
+          </div>
+          <div class="confirm-summary" id="confirm-summary" aria-label="Registration summary">
+            <!-- Summary injected by script.js -->
+          </div>
+          <p class="confirm-note">
+            If anything looks incorrect, press <strong>← Back</strong> to make changes.
+          </p>
+        </section>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-secondary" id="btn-back"
+            hidden aria-label="Go back to previous step">← Back</button>
+          <button type="button" class="btn btn-primary" id="btn-next"
+            aria-label="Continue to next step">Continue →</button>
+          <button type="button" class="btn btn-primary btn-submit-cta" id="btn-submit"
+            hidden aria-label="Submit your registration">
+            <span id="submit-label">Submit Registration →</span>
+            <span class="btn-spinner" id="btn-spinner" hidden aria-label="Submitting, please wait…"></span>
+          </button>
+        </div>
+
+      </article>
+
+      <aside class="preview-panel" id="preview-panel" aria-label="Live student preview">
+        <div class="preview-card">
+          <div class="pv-header">
+            <span aria-hidden="true">👁️</span>
+            <h3 class="pv-title">Student Preview</h3>
+          </div>
+          <div class="avatar-ring" aria-hidden="true">
+            <div class="avatar" id="pv-avatar">?</div>
+          </div>
+          <ul class="pv-fields" aria-label="Your entered information">
+            <li class="pv-field">
+              <span class="pv-fi" aria-hidden="true">👤</span>
+              <span class="pv-fv" id="pv-name">—</span>
+            </li>
+            <li class="pv-field">
+              <span class="pv-fi" aria-hidden="true">✉️</span>
+              <span class="pv-fv" id="pv-email">—</span>
+            </li>
+            <li class="pv-field">
+              <span class="pv-fi" aria-hidden="true">📞</span>
+              <span class="pv-fv" id="pv-phone">—</span>
+            </li>
+            <li class="pv-field">
+              <span class="pv-fi" aria-hidden="true">📅</span>
+              <span class="pv-fv" id="pv-dob">—</span>
+            </li>
+            <li class="pv-field pv-field--course">
+              <span class="pv-fi" aria-hidden="true">🎓</span>
+              <span class="pv-fv" id="pv-course">—</span>
+            </li>
+          </ul>
+          <div class="pv-progress">
+            <div class="pvp-track">
+              <div class="pvp-fill" id="pvp-fill" style="width: 33.3%"></div>
+            </div>
+            <div class="pvp-label">
+              <span id="pvp-text">Step 1 of 3</span>
+              <span id="pvp-pct">33%</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <div class="success-screen" id="success-screen" hidden
+    role="dialog" aria-modal="true" aria-labelledby="success-heading">
+    <div class="success-card">
+      <div class="success-confetti" aria-hidden="true">🎉 🎊 ✨ 🌟 🎓</div>
+      <div class="success-check" aria-hidden="true">✓</div>
+      <h2 id="success-heading" class="success-title" tabindex="-1">Registration Successful!</h2>
+      <p class="success-welcome">Welcome to EduEnroll, <strong id="ss-name">—</strong>!</p>
+      <p class="success-body">Your registration has been successfully submitted.</p>
+      <div class="app-id-box">
+        <span class="aib-label">Application ID</span>
+        <span class="aib-value" id="ss-app-id">—</span>
+      </div>
+      <div class="ss-details" id="ss-details"></div>
+      <p class="success-note">
+        We'll be in touch shortly with your enrollment confirmation.<br />
+        Check your email for further instructions.
+      </p>
+      <button type="button" class="btn btn-primary btn-full" id="btn-register-again">
+        Register Another Student
+      </button>
+    </div>
+  </div>
+
+  <button type="button" class="mobile-preview-btn" id="mobile-preview-btn"
+    aria-expanded="false" aria-controls="preview-panel"
+    aria-label="Toggle student preview panel">
+    <span aria-hidden="true">👁️</span>
+    <span>Preview</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
